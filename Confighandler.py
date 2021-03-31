@@ -10,17 +10,22 @@
 
 def parse_file(filename):
     #open the file to read, and implement the logic as required by the assignment-4
+    tempFile = open(filename, "r")
+    pFile = tempFile.readlines()
+    for line in pFile:
+        if 'true' in line:
+            print(line)
+    tempFile.close()
 
-
-    pass #//you can remove this line on your side.
 def validate_file(filename):
     #validate if the file is a text file, if it is return true, otherwise return false
+     if filename.endswith(".txt"):
+        return True
+    else:
+        return False
 
 
     return True
-    pass #//you can remove this line on your side
-
-
 
 #Main program, do not modify it.
 if __name__ == "__main__":
