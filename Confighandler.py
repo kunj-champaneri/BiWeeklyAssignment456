@@ -19,13 +19,19 @@ def parse_file(filename):
 
 def validate_file(filename):
     #validate if the file is a text file, if it is return true, otherwise return false
-     if filename.endswith(".txt"):
+      num1 = 0
+    num2 = 0
+    num3 = 0
+    for i in filename:
+        if i == ".":
+            num1 = num1 + 1
+        if i == "t" and num1 != 0:
+            num2 = num2 + 1
+        if i == "x" and num1 != 0:
+            num3 = num3 + 1
+    if num1 > 0 and num2 > 1 and num3 > 0:
         return True
-    else:
-        return False
-
-
-    return True
+    return False
 
 #Main program, do not modify it.
 if __name__ == "__main__":
